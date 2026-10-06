@@ -1,10 +1,24 @@
-try:
-    number = float(input("Enter the money value: "))
-except ValueError:
-    print("Please enter a valid number.")
-    
+def get_valid_input():
+    while True:
+        try:
+            number = float(input("Enter the money value: "))
+            return number
+            
+            
+        except ValueError:
+            print("Please enter a valid number.")
 
-discount = float(input("Enter the discount value without typing %:"))
+
+
+
+
+
+number = get_valid_input()
+while number < 0:
+    print("Please enter a valid number.")
+    number = get_valid_input()
+
+discount = float(input("Enter the discount value without %:"))
 
 def show_discount(num, dis):
     discount_amount = float(( num /100) * dis)
