@@ -6,7 +6,7 @@ def get_valid_number():
             
             
         except ValueError:
-            print("Please enter a valid number: ")
+            print("Please enter a valid number ")
 
 def get_valid_discount_value():
     while True:
@@ -22,13 +22,8 @@ def get_valid_discount_value():
                 
             return value
         except ValueError:
-            print("Enter a valid value: ")
+            print("Enter a valid value...")
    
-
-
-number = get_valid_number()
-discount = get_valid_discount_value()
-
 def show_discount(num, dis):
     discount_amount = float(( num /100) * dis)
     final_amount = num - discount_amount
@@ -38,7 +33,13 @@ def show_discount(num, dis):
         "final_amount": final_amount
         
     }
-result = show_discount(number, discount)
-print(f"Amount after discount: {result["final_amount"]} \nDiscount amount {result["discount_amount"]}" )
+
+if __name__ == "__main__":
+    
+    number = get_valid_number()
+    discount = get_valid_discount_value()
+    result = show_discount(number, discount)
+
+    print(f"Amount after discount: {result["final_amount"]} \nDiscount amount {result["discount_amount"]}" )
 
 
